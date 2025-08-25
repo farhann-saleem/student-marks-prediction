@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        form { margin: 20px auto; width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #aaa; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #218838; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>📚 Student Marks Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="number" name="study_hours" step="any" placeholder="Study Hours" required>
+        <input type="number" name="courses" placeholder="Number of Courses" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
